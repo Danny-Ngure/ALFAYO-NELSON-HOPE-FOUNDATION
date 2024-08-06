@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Foundation - Alfayo Nelson Hope Foundation</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* White background */
+            color: #333; /* Dark text color */
+            line-height: 1.6;
+            height: auto; /* Adjusted to allow scrolling */
+            overflow-x: hidden; /* Prevent horizontal scrollbars */
+        }
+
+        header {
+            background-color: #f2f2f2; /* Light gray background for header */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .logo img {
+            max-height: 100px;
+            max-width: 200px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #e0e0e0; /* Lighter gray on hover */
+        }
+
+        /* Typing effect */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .typing {
+            font-size: 32px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid;
+            animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+            text-align: center;
+            color: blue;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding shadow for better readability */
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-family: 'Lucida Handwriting', cursive;
+            opacity: 0;
+            animation: fadeIn 2s forwards 4s, fadeOut 2s forwards 13s; /* Delayed fade-in and fade-out */
+            text-align: center;
+            color: red;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding shadow for better readability */
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        .slideshow {
+            position: relative;
+            max-width: 100%;
+            height: 60vh; /* Adjusted height for slideshow */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: auto;
+            height: 60vh; /* Full height of slideshow container */
+            object-fit: contain; /* Ensure the image is fully visible */
+        }
+
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .content {
+            display: flex;
+            height: auto; /* Adjusted height for content */
+            margin: 20px 0; /* Added margin for spacing */
+        }
+
+        .content .left, .content .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .content .left {
+            background-color: #f0f0f0; /* Light gray background for left side */
+        }
+
+        .content .right {
+            background-color: #ffffff; /* White background for right side */
+        }
+
+        .content img {
+            max-width: 100%;
+            max-height: 100;
+            border-radius: 10px; /* Optional: adds rounded corners to images */
+        }
+
+        .content p {
+            font-size: 20px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .what-we-do {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .what-we-do h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: space-between; /* Distribute boxes evenly */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            gap: 20px; /* Space between boxes */
+        }
+
+        .box {
+            flex: 1;
+            max-width: 30%; /* Ensure boxes fit horizontally */
+            min-width: 200px; /* Minimum width to ensure squareness */
+            height: 200px; /* Make boxes square */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .box img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px;
+            border-radius: 10px; /* Optional: adds rounded corners to images */
+        }
+
+        .box-text {
+            text-align: left;
+        }
+
+        .box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .box p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Color themes */
+        .light-blue {
+            background-color: #0096FF; /* Light blue background */
+        }
+
+        .red {
+            background-color: #EE4B2B; /* Light red background */
+        }
+
+        .orange {
+            background-color: #FF7518; /* Light orange background */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Alfayo Nelson Hope Foundation Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="MAIN PAGE.html">Home</a></li>
+                <li><a href="foundation.html">Our Foundation</a></li>
+                <li><a href="alfayosjourney.html">Alfayo's Journey</a></li>
+                <li><a href="missionvision.html">Our Mission and Vision</a></li>
+                <li><a href="Portal.html">Portal</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="slideshow">
+            <div class="slides">
+                <img src="slide1.jpg" alt="Slide 1">
+                <img src="slide2.jpg" alt="Slide 2">
+                <img src="slide3.jpg" alt="Slide 3">
+                <img src="slide4.jpg" alt="Slide 4">
+                <img src="slide5.jpg" alt="Slide 5">
+                <img src="slide6.jpg" alt="Slide 6">
+                <img src="slide7.jpg" alt="Slide 7">
+                <img src="slide8.jpg" alt="Slide 8">
+                <img src="slide9.jpg" alt="Slide 9">
+                <img src="slide11.jpg" alt="Slide 11">
+                <img src="slide12.jpg" alt="Slide 12">
+                <img src="slide13.jpg" alt="Slide 13">
+                <img src="slide14.jpg" alt="Slide 14">
+                <img src="slide15.jpg" alt="Slide 15">
+                <img src="slide16.jpg" alt="Slide 16">
+                <img src="slide17.jpg" alt="Slide 17">
+                <img src="slide18.jpg" alt="Slide 18"> 
+                <img src="slide19.jpg" alt="Slide 19">
+                <img src="slide20.jpg" alt="Slide 20">
+                <img src="slide21.jpg" alt="Slide 21">
+                <img src="slide22.jpg" alt="Slide 22">
+                <img src="slide23.jpg" alt="Slide 23">
+                <img src="slide24.jpg" alt="Slide 24">
+                <img src="slide25.jpg" alt="Slide 25">
+                <img src="slide26.jpg" alt="Slide 26">
+                <img src="slide27.jpg" alt="Slide 27">
+                <img src="slide28.jpg" alt="Slide 28">
+                <img src="slide29.jpg" alt="Slide 29">
+                <img src="slide30.jpg" alt="Slide 30">
+                <img src="slide31.jpg" alt="Slide 31">
+                <img src="slide32.jpg" alt="Slide 32">
+                <img src="slide33.jpg" alt="Slide 33">
+                <img src="slide34.jpg" alt="Slide 34">
+                <img src="slide35.jpg" alt="Slide 35">
+                <img src="slide36.jpg" alt="Slide 36">
+            </div>
+            <div class="nav-buttons">
+                <button id="prevBtn">Previous</button>
+                <button id="nextBtn">Next</button>
+            </div>
+            <div class="typing">Welcome to Alfayo Nelson Hope Foundation</div>
+            <div class="subtitle">Touching Lives, One Heart at a Time</div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="left">
+            <img src="logo.png" alt="Alfayo Nelson">
+        </div>
+        <div class="right">
+            <p>Welcome to the Alfayo Nelson Hope Foundation. Our mission is to bring hope and positive change to the lives of those in need. We are dedicated to improving the well-being of individuals and communities through various initiatives and programs. Join us in making a difference and creating a brighter future for all.</p>
+        </div>
+    </section>
+
+    <section class="what-we-do">
+        <h2>What We Do</h2>
+        <div class="boxes">
+            <div class="box light-blue">
+                <div class="box-text">
+                    <h3>Community Outreach</h3>
+                    <p>Providing essential services and support to underprivileged communities.</p>
+                </div>
+            </div>
+            <div class="box red">
+                <div class="box-text">
+                    <h3>Education Programs</h3>
+                    <p>Empowering individuals through education and skill development.</p>
+                </div>
+            </div>
+            <div class="box orange">
+                <div class="box-text">
+                    <h3>Social Programs</h3>
+                    <p>Improving access to healthcare services and promoting wellness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Alfayo Nelson Hope Foundation. All rights reserved.
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector('.slides');
+        const slideImages = document.querySelectorAll('.slides img');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(index) {
+            const slideWidth = slideImages[0].clientWidth;
+            slides.style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slideImages.length;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slideImages.length) % slideImages.length;
+            showSlide(slideIndex);
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Automatic slide change
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>

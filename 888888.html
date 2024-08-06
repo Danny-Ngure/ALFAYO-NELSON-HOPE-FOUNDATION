@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Alfayo Nelson Hope Foundation</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Light background */
+            color: #333; /* Dark text color */
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #03a9f4; /* Vibrant blue */
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo img {
+            max-height: 80px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #03a9f4; /* Vibrant blue */
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info h2 {
+            color: #ff5722; /* Bright orange */
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            background-color: #03a9f4; /* Vibrant blue */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background-color: #0288d1; /* Darker shade of blue */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #03a9f4; /* Vibrant blue */
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Alfayo Nelson Hope Foundation Logo">
+        </div>
+    </header>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+            <h2>We'd Love to Hear from You!</h2>
+            <p>If you have any questions, suggestions, or feedback, feel free to reach out to us. Our team is here to help and support you.</p>
+            <p><strong>Email:</strong> <a href="mailto:info@alfayonelsonfoundation.org">info@alfayonelsonfoundation.org</a></p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <p><strong>Address:</strong> 123 Hope Street, Nairobi, Kenya</p>
+        </div>
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="contact_form_handler.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Alfayo Nelson Hope Foundation. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
